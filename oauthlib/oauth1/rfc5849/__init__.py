@@ -166,7 +166,7 @@ class Client(object):
             ('oauth_signature_method', self.signature_method),
             ('oauth_consumer_key', self.client_key),
         ]
-        if self.resource_owner_key:
+        if self.resource_owner_key is not None:
             params.append(('oauth_token', self.resource_owner_key))
         if self.callback_uri:
             params.append(('oauth_callback', self.callback_uri))
